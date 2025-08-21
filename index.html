@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html lang="fa" dir="rtl">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>تغییر رنگ پس‌زمینه ✨</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <!-- فونت لطیف -->
+  <link href="https://fonts.googleapis.com/css2?family=Vazirmatn:wght@300;400;600&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="./style.css" />
+</head>
+<body>
+  <main class="card">
+    <h1>رنگ پس‌زمینه رو عوض کن 🎨</h1>
+
+    <p class="hint">هر بار کلیک کنی یه رنگ جذاب جدید میاد.</p>
+
+    <div class="color-chip" aria-live="polite" id="colorChip">
+      <span class="dot" id="colorDot"></span>
+      <span class="code" id="colorCode">#0EF1D5</span>
+      <button class="copy" id="copyBtn" title="کپی رنگ">کپی</button>
+    </div>
+
+    <button id="changeColorBtn" class="btn">
+      ✨ تغییر رنگ
+    </button>
+
+    <label class="toggle">
+      <input type="checkbox" id="gradientToggle" />
+      <span>به‌جاش گرادیان بساز</span>
+    </label>
+  </main>
+
+  <script src="./script.js"></script>
+</body>
+</html>
