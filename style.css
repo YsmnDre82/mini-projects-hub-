@@ -1,117 +1,76 @@
-:root{
-  --bg1: #0ea5e9;
-  --bg2: #9333ea;
-  --text: #0f172a;
-  --card: rgba(255,255,255,0.18);
-  --stroke: rgba(255,255,255,0.35);
-  --glow: rgba(255,255,255,0.25);
-  --btn: #111827;
-  --btn-text: #f9fafb;
-  --accent: #06b6d4;
-  --shadow: 0 20px 60px -20px rgba(0,0,0,0.35);
+    * * {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  font-family: "Poppins", "Segoe UI", Tahoma, Geneva, Verdana, sans-serif;
 }
 
-*{ box-sizing: border-box; }
-
-html,body{
-  height:100%;
-  margin:0;
-  font-family: "Vazirmatn", system-ui, -apple-system, Segoe UI, Roboto, sans-serif;
-  color: var(--text);
+body {
+  height: 100vh;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  background: linear-gradient(135deg, #ff9a9e, #fad0c4, #fad0c4, #fbc2eb, #a6c1ee);
+  background-size: 400% 400%;
+  animation: gradientMove 10s ease infinite;
+  transition: 0.5s;
 }
 
-body{
-  display:grid;
-  place-items:center;
-  background:
-    radial-gradient(60vmax 60vmax at 10% 10%, rgba(147,51,234,.25), transparent 60%),
-    radial-gradient(60vmax 60vmax at 90% 90%, rgba(14,165,233,.25), transparent 60%),
-    linear-gradient(135deg, #f1f5f9, #e2e8f0);
-  transition: background 400ms ease;
+@keyframes gradientMove {
+  0% { background-position: 0% 50%; }
+  50% { background-position: 100% 50%; }
+  100% { background-position: 0% 50%; }
 }
 
-.card{
-  width:min(92vw, 520px);
+.counter-box {
+  background: rgba(255, 255, 255, 0.85);
   backdrop-filter: blur(12px);
-  background: var(--card);
-  border: 1px solid var(--stroke);
+  padding: 35px 45px;
   border-radius: 20px;
-  padding: 28px;
-  box-shadow: var(--shadow);
-  animation: pop .4s ease;
+  box-shadow: 0 12px 30px rgba(0,0,0,0.15);
+  text-align: center;
+  width: 330px;
+  transition: 0.4s;
 }
 
-@keyframes pop{ from{ transform:scale(.96); opacity:.6 } }
+.counter-box:hover {
+  transform: translateY(-8px) scale(1.03);
+}
 
-h1{
-  margin: 0 0 8px;
-  font-size: clamp(22px, 3.2vw, 28px);
+h1 {
+  font-size: 4rem;
+  margin-bottom: 25px;
+  color: #4c1d95;
   font-weight: 700;
+  transition: color 0.3s, transform 0.3s;
 }
 
-.hint{
-  margin: 0 0 18px;
-  opacity:.8;
-  font-size: 14px;
+h1:hover {
+  transform: scale(1.1);
 }
 
-.color-chip{
-  display:flex;
-  align-items:center;
-  gap:12px;
-  border:1px solid var(--stroke);
-  background: rgba(255,255,255,.45);
-  border-radius: 14px;
-  padding: 10px 12px;
-  margin-bottom: 16px;
+.btns {
+  display: flex;
+  justify-content: space-between;
+  gap: 12px;
 }
 
-.color-chip .dot{
-  width:18px; height:18px; border-radius:50%;
-  border:1px solid rgba(0,0,0,.1);
-  display:inline-block;
-  box-shadow: 0 0 0 4px var(--glow) inset;
-}
-
-.color-chip .code{
-  font-variant-numeric: tabular-nums;
-  font-weight:600;
-  letter-spacing:.3px;
-}
-
-.color-chip .copy{
-  margin-inline-start:auto;
-  border:1px solid var(--stroke);
-  background:#fff;
-  border-radius:10px;
-  padding:6px 10px;
-  font-size:12px;
-  cursor:pointer;
-  transition: transform .08s ease, box-shadow .2s ease;
-}
-.color-chip .copy:active{ transform: scale(.97); }
-
-.btn{
-  width:100%;
+button {
+  flex: 1;
+  padding: 14px 18px;
   border: none;
-  border-radius: 14px;
-  padding: 14px 16px;
-  font-size: 16px;
-  font-weight:700;
+  border-radius: 10px;
+  font-size: 1rem;
+  font-weight: 600;
   cursor: pointer;
-  background: linear-gradient(135deg, var(--btn), #1f2937);
-  color: var(--btn-text);
-  box-shadow: 0 10px 30px -10px rgba(31,41,55,.8);
-  transition: transform .08s ease, box-shadow .2s ease, filter .2s ease;
+  transition: all 0.3s ease;
 }
-.btn:hover{ filter: brightness(1.06); box-shadow: 0 14px 34px -10px rgba(31,41,55,.85); }
-.btn:active{ transform: translateY(1px); }
 
-.toggle{
-  display:flex;
-  gap:10px;
-  align-items:center;
-  margin-top:12px;
-  font-size:14px;
+button:hover {
+  transform: translateY(-3px) scale(1.05);
+  box-shadow: 0 6px 15px rgba(0,0,0,0.2);
 }
-.toggle input{ transform: translateY(1px); }
+
+.increase { background: linear-gradient(135deg, #34d399, #059669); color: #fff; }
+.decrease { background: linear-gradient(135deg, #f87171, #dc2626); color: #fff; }
+.reset    { background: linear-gradient(135deg, #fbbf24, #d97706); color: #fff; }
