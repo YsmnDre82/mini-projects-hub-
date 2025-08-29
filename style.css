@@ -1,76 +1,77 @@
-    * * {
+@import url('https://fonts.googleapis.com/css2?family=Vazirmatn:wght@400;700&display=swap');
+
+* {
   margin: 0;
   padding: 0;
   box-sizing: border-box;
-  font-family: "Poppins", "Segoe UI", Tahoma, Geneva, Verdana, sans-serif;
+  font-family: "Vazirmatn", sans-serif;
 }
 
 body {
+  background: linear-gradient(135deg, #667eea, #764ba2);
   height: 100vh;
   display: flex;
   justify-content: center;
   align-items: center;
-  background: linear-gradient(135deg, #ff9a9e, #fad0c4, #fad0c4, #fbc2eb, #a6c1ee);
-  background-size: 400% 400%;
-  animation: gradientMove 10s ease infinite;
-  transition: 0.5s;
 }
 
-@keyframes gradientMove {
-  0% { background-position: 0% 50%; }
-  50% { background-position: 100% 50%; }
-  100% { background-position: 0% 50%; }
-}
-
-.counter-box {
-  background: rgba(255, 255, 255, 0.85);
-  backdrop-filter: blur(12px);
-  padding: 35px 45px;
+.calculator {
+  width: 320px;
+  background: #1e1e2f;
   border-radius: 20px;
-  box-shadow: 0 12px 30px rgba(0,0,0,0.15);
-  text-align: center;
-  width: 330px;
-  transition: 0.4s;
+  overflow: hidden;
+  box-shadow: 0px 10px 30px rgba(0,0,0,0.4);
 }
 
-.counter-box:hover {
-  transform: translateY(-8px) scale(1.03);
+.display {
+  background: #111;
+  padding: 20px;
+  text-align: right;
 }
 
-h1 {
-  font-size: 4rem;
-  margin-bottom: 25px;
-  color: #4c1d95;
-  font-weight: 700;
-  transition: color 0.3s, transform 0.3s;
-}
-
-h1:hover {
-  transform: scale(1.1);
-}
-
-.btns {
-  display: flex;
-  justify-content: space-between;
-  gap: 12px;
-}
-
-button {
-  flex: 1;
-  padding: 14px 18px;
+.display input {
+  width: 100%;
+  font-size: 2rem;
+  padding: 10px;
   border: none;
-  border-radius: 10px;
-  font-size: 1rem;
-  font-weight: 600;
+  outline: none;
+  background: transparent;
+  color: #fff;
+  text-align: right;
+}
+
+.buttons {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  gap: 10px;
+  padding: 20px;
+}
+
+.btn {
+  background: #2e2e3e;
+  border: none;
+  padding: 20px;
+  border-radius: 12px;
+  color: #fff;
+  font-size: 1.2rem;
   cursor: pointer;
-  transition: all 0.3s ease;
+  transition: all 0.2s ease-in-out;
 }
 
-button:hover {
-  transform: translateY(-3px) scale(1.05);
-  box-shadow: 0 6px 15px rgba(0,0,0,0.2);
+.btn:hover {
+  background: #44445a;
+  transform: scale(1.05);
 }
 
-.increase { background: linear-gradient(135deg, #34d399, #059669); color: #fff; }
-.decrease { background: linear-gradient(135deg, #f87171, #dc2626); color: #fff; }
-.reset    { background: linear-gradient(135deg, #fbbf24, #d97706); color: #fff; }
+.equal {
+  grid-row: span 2;
+  background: #ff7675;
+}
+
+.equal:hover {
+  background: #e05656;
+}
+
+.zero {
+  grid-column: span 2;
+}
