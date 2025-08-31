@@ -1,40 +1,33 @@
 <!DOCTYPE html>
-<html lang="fa">
+<html lang="fa" dir="rtl">
 <head>
-  <meta charset="UTF-8">
-  <title>ماشین حساب خوشگل ✨</title>
-  <link rel="stylesheet" href="style.css">
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>ساعت و تاریخ زنده تهران</title>
+  <link rel="stylesheet" href="style.css" />
+  <!-- فونت دلخواه (اختیاری) -->
+  <link href="https://fonts.googleapis.com/css2?family=Vazirmatn:wght@300;600&display=swap" rel="stylesheet">
 </head>
 <body>
-  <div class="calculator">
-    <div class="display">
-      <input type="text" id="result" disabled>
+  <div class="bg-orbs"></div>
+
+  <main class="card" aria-live="polite">
+    <div class="city">تهران، ایران</div>
+
+    <div class="time" id="time">--:--:--</div>
+
+    <div class="date fa" id="date-fa">—</div>
+
+    <div class="date en" id="date-en">—</div>
+
+    <div class="chip" id="status">درحال به‌روزرسانی…</div>
+
+    <div class="controls">
+      <button id="copyBtn" class="btn">کپی تاریخ/ساعت</button>
+      <button id="themeBtn" class="btn ghost">تغییر تم</button>
     </div>
-    <div class="buttons">
-      <button class="btn clear">C</button>
-      <button class="btn">/</button>
-      <button class="btn">*</button>
-      <button class="btn">←</button>
+  </main>
 
-      <button class="btn">7</button>
-      <button class="btn">8</button>
-      <button class="btn">9</button>
-      <button class="btn">-</button>
-
-      <button class="btn">4</button>
-      <button class="btn">5</button>
-      <button class="btn">6</button>
-      <button class="btn">+</button>
-
-      <button class="btn">1</button>
-      <button class="btn">2</button>
-      <button class="btn">3</button>
-      <button class="btn equal">=</button>
-
-      <button class="btn zero">0</button>
-      <button class="btn">.</button>
-    </div>
-  </div>
-  <script src="script.js"></script>
+  <script src="script.js" defer></script>
 </body>
 </html>

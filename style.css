@@ -1,77 +1,135 @@
-@import url('https://fonts.googleapis.com/css2?family=Vazirmatn:wght@400;700&display=swap');
+*,
+*::before,
+*::after { box-sizing: border-box; }
 
-* {
+:root{
+  --bg1: #0f1024;
+  --bg2: #1b1f3b;
+  --glass: rgba(255,255,255,.1);
+  --stroke: rgba(255,255,255,.15);
+  --txt: #f5f7ff;
+  --muted: #c9cbe3;
+  --accent: #8efeff;
+  --shadow: 0 10px 30px rgba(0,0,0,.35);
+}
+
+html, body{
+  height: 100%;
   margin: 0;
-  padding: 0;
-  box-sizing: border-box;
-  font-family: "Vazirmatn", sans-serif;
-}
-
-body {
-  background: linear-gradient(135deg, #667eea, #764ba2);
-  height: 100vh;
-  display: flex;
-  justify-content: center;
-  align-items: center;
-}
-
-.calculator {
-  width: 320px;
-  background: #1e1e2f;
-  border-radius: 20px;
+  font-family: "Vazirmatn", system-ui, -apple-system, Segoe UI, Roboto, sans-serif;
+  color: var(--txt);
+  background: radial-gradient(80vw 80vh at 20% 20%, var(--bg2), var(--bg1));
   overflow: hidden;
-  box-shadow: 0px 10px 30px rgba(0,0,0,0.4);
 }
 
-.display {
-  background: #111;
-  padding: 20px;
-  text-align: right;
+.bg-orbs::before,
+.bg-orbs::after{
+  content: "";
+  position: fixed;
+  inset: auto;
+  width: 55vmin; height: 55vmin;
+  border-radius: 50%;
+  filter: blur(40px);
+  opacity: .35;
+  z-index: 0;
+  animation: float 16s ease-in-out infinite alternate;
+}
+.bg-orbs::before{ background: #6a5cff; top: -10vmin; right: -6vmin; }
+.bg-orbs::after{  background: #00e5ff; bottom: -12vmin; left: -8vmin; animation-delay: 1.2s; }
+
+@keyframes float{
+  to { transform: translate(4vmin, -4vmin) scale(1.05); opacity: .45; }
 }
 
-.display input {
-  width: 100%;
-  font-size: 2rem;
-  padding: 10px;
-  border: none;
-  outline: none;
-  background: transparent;
-  color: #fff;
-  text-align: right;
-}
-
-.buttons {
+.card{
+  position: relative;
+  z-index: 1;
+  width: min(92vw, 720px);
+  margin: 10vh auto;
+  padding: 32px 28px;
+  background: linear-gradient(180deg, rgba(255,255,255,.14), rgba(255,255,255,.06));
+  border: 1px solid var(--stroke);
+  border-radius: 20px;
+  box-shadow: var(--shadow);
+  backdrop-filter: blur(10px) saturate(130%);
+  -webkit-backdrop-filter: blur(10px) saturate(130%);
   display: grid;
-  grid-template-columns: repeat(4, 1fr);
+  gap: 14px;
+  justify-items: center;
+  text-align: center;
+}
+
+.city{
+  font-weight: 600;
+  letter-spacing: .5px;
+  color: var(--accent);
+  border: 1px dashed var(--accent);
+  border-radius: 999px;
+  padding: 6px 12px;
+  opacity: .9;
+}
+
+.time{
+  font-size: clamp(42px, 7vw, 84px);
+  line-height: 1.1;
+  font-weight: 700;
+  letter-spacing: 2px;
+  text-shadow: 0 2px 10px rgba(0,0,0,.35);
+}
+
+.date{
+  font-size: clamp(14px, 2.6vw, 20px);
+  color: var(--muted);
+}
+.date.en{
+  direction: ltr;
+  opacity: .85;
+}
+
+.chip{
+  margin-top: 6px;
+  font-size: 13px;
+  color: #10131a;
+  background: linear-gradient(90deg, #8efeff, #b6ffda);
+  padding: 6px 10px;
+  border-radius: 999px;
+}
+
+.controls{
+  display: flex;
   gap: 10px;
-  padding: 20px;
+  margin-top: 10px;
+  flex-wrap: wrap;
+  justify-content: center;
 }
 
-.btn {
-  background: #2e2e3e;
-  border: none;
-  padding: 20px;
+.btn{
+  border: 1px solid var(--stroke);
+  background: rgba(255,255,255,.08);
+  color: var(--txt);
+  padding: 10px 14px;
   border-radius: 12px;
-  color: #fff;
-  font-size: 1.2rem;
   cursor: pointer;
-  transition: all 0.2s ease-in-out;
+  transition: transform .12s ease, background .2s ease, border-color .2s ease;
+  backdrop-filter: blur(6px);
+}
+.btn:hover{ transform: translateY(-2px); background: rgba(255,255,255,.16); }
+
+.btn:active{ transform: translateY(0); }
+
+.btn.ghost{
+  background: transparent;
+  border-color: rgba(255,255,255,.22);
 }
 
-.btn:hover {
-  background: #44445a;
-  transform: scale(1.05);
-}
-
-.equal {
-  grid-row: span 2;
-  background: #ff7675;
-}
-
-.equal:hover {
-  background: #e05656;
-}
-
-.zero {
-  grid-column: span 2;
+/* تم روشن (با دکمه قابل تغییر) */
+.light{
+  --bg1: #eff3ff;
+  --bg2: #dfe7ff;
+  --glass: rgba(255,255,255,.65);
+  --stroke: rgba(0,0,0,.07);
+  --txt: #0d1323;
+  --muted: #3e4e7a;
+  --accent: #0066ff;
+  color-scheme: light;
 }
