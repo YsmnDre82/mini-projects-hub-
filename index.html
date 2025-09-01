@@ -1,33 +1,27 @@
 <!DOCTYPE html>
-<html lang="fa" dir="rtl">
+<html lang="fa">
 <head>
-  <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1" />
-  <title>ساعت و تاریخ زنده تهران</title>
-  <link rel="stylesheet" href="style.css" />
-  <!-- فونت دلخواه (اختیاری) -->
-  <link href="https://fonts.googleapis.com/css2?family=Vazirmatn:wght@300;600&display=swap" rel="stylesheet">
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>مبدل دما</title>
+  <link rel="stylesheet" href="style.css">
 </head>
 <body>
-  <div class="bg-orbs"></div>
+  <div class="container">
+    <h1>🔄 مبدل دما</h1>
 
-  <main class="card" aria-live="polite">
-    <div class="city">تهران، ایران</div>
-
-    <div class="time" id="time">--:--:--</div>
-
-    <div class="date fa" id="date-fa">—</div>
-
-    <div class="date en" id="date-en">—</div>
-
-    <div class="chip" id="status">درحال به‌روزرسانی…</div>
-
-    <div class="controls">
-      <button id="copyBtn" class="btn">کپی تاریخ/ساعت</button>
-      <button id="themeBtn" class="btn ghost">تغییر تم</button>
+    <div class="converter">
+      <input type="number" id="temperatureInput" placeholder="مقدار دما را وارد کنید">
+      <select id="conversionType">
+        <option value="toCelsius">فارنهایت ➝ سانتی‌گراد</option>
+        <option value="toFahrenheit">سانتی‌گراد ➝ فارنهایت</option>
+      </select>
+      <button id="convertBtn">تبدیل</button>
     </div>
-  </main>
 
-  <script src="script.js" defer></script>
+    <p id="result">نتیجه اینجا نمایش داده می‌شود</p>
+  </div>
+
+  <script src="script.js"></script>
 </body>
 </html>
