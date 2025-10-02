@@ -31,8 +31,17 @@ generateBtn.addEventListener("click", () => {
 });
 
 // دکمه کپی
-copyBtn.addEventListener("click", () => {
-  passwordInput.select();
-  document.execCommand("copy");
-  alert("رمز کپی شد! ✅");
+// copyBtn.addEventListener("click", () => {
+//   passwordInput.select();
+//   document.execCommand("copy");
+//   alert("رمز کپی شد! ✅");
+// });
+
+copyBtn.addEventListener("click", async()=>{
+    try{
+        await navigator.clipboard.writeText(passwordInput.value);
+        alert("رمز کپی شد! ✅")
+    }catch(err){
+        alert("مشکلی پیش اومده مرورگر اجازه کپی نداده")
+    }
 });
