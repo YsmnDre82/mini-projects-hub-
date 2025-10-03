@@ -1,9 +1,8 @@
 @import url('https://fonts.googleapis.com/css2?family=Vazirmatn:wght@400;700&display=swap');
 
 body {
-  font-family: "Vazirmatn", sans-serif;
-  background: linear-gradient(135deg, #667eea, #764ba2);
-  color: #fff;
+  font-family: 'Vazirmatn', sans-serif;
+  background: linear-gradient(to right, #36d1dc, #5b86e5);
   display: flex;
   justify-content: center;
   align-items: center;
@@ -12,60 +11,51 @@ body {
 }
 
 .container {
-  background: rgba(255, 255, 255, 0.1);
-  backdrop-filter: blur(8px);
-  border-radius: 15px;
+  background: #fff;
   padding: 30px;
+  border-radius: 15px;
   text-align: center;
-  width: 350px;
-  box-shadow: 0 8px 20px rgba(0,0,0,0.3);
+  box-shadow: 0px 5px 20px rgba(0,0,0,0.2);
+  max-width: 350px;
+  width: 100%;
 }
 
 h1 {
+  margin-bottom: 20px;
+  color: #333;
+}
+
+label {
+  display: block;
   margin-bottom: 10px;
+  font-weight: bold;
 }
 
-.controls {
-  margin: 20px 0;
-}
-
-input[type="number"] {
-  width: 70px;
-  padding: 5px;
-  border-radius: 5px;
-  border: none;
-  text-align: center;
-  font-size: 16px;
+input {
+  padding: 10px;
+  border: 2px solid #5b86e5;
+  border-radius: 8px;
+  width: 100%;
+  margin-bottom: 15px;
 }
 
 button {
-  background: #ff7eb3;
+  padding: 10px 20px;
+  background: #5b86e5;
+  color: white;
   border: none;
-  padding: 10px 15px;
-  margin: 10px 5px;
   border-radius: 8px;
-  color: #fff;
-  font-size: 16px;
   cursor: pointer;
+  font-size: 16px;
   transition: 0.3s;
 }
 
 button:hover {
-  background: #ff4f81;
+  background: #36d1dc;
 }
 
-.result {
-  margin-top: 15px;
-  display: flex;
-  justify-content: center;
-  align-items: center;
-}
-
-.result input {
-  flex: 1;
-  padding: 10px;
-  border-radius: 5px;
-  border: none;
-  font-size: 16px;
-  margin-right: 8px;
+#result {
+  margin-top: 20px;
+  font-size: 18px;
+  color: #444;
 }
